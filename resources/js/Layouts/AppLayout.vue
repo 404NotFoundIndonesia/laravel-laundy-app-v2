@@ -66,6 +66,15 @@ onMounted(initFlowbite);
                                     </template>
 
                                     <template #content>
+                                        <!-- Master Data -->
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            Master Data
+                                        </div>
+
+                                        <DropdownLink :href="route('customer.index')">
+                                            Customer
+                                        </DropdownLink>
+
                                         <!-- Account Management -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
                                             Manage Account
@@ -139,6 +148,9 @@ onMounted(initFlowbite);
                         </div>
 
                         <div class="mt-3 space-y-1">
+                            <ResponsiveNavLink :href="route('customer.index')" :active="route().current('customer.*')">
+                                Customer
+                            </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
                                 Profile
                             </ResponsiveNavLink>

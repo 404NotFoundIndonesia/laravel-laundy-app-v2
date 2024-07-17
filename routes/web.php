@@ -13,4 +13,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::resource('customer', \App\Http\Controllers\CustomerController::class);
 });
