@@ -84,7 +84,7 @@ export const deleteConfirmation = (callback) => {
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#f43f5e",
+        confirmButtonColor: "#10b981",
         confirmButtonText: "Yes, delete it!",
         cancelButtonColor: "#1f2937",
         cancelButtonText: "No, cancel",
