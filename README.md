@@ -87,6 +87,15 @@ npm run dev
 
 Open `http://localhost:8000` in your browser to access the app. When you want to access this app in a web browser, make sure you **do not close or stop both of those processes**.
 
+## Screenshot
+
+### Customer Management
+
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/64a628cc-6615-408e-b7de-7886b2503ebf">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/e94dc38b-7136-46e8-9c65-9bc6e8e0941a">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/53e1dcd4-b464-40c5-8fd6-e9f24892225e">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/88c098a2-6157-46e1-a725-0b6bf4183e78">
+
 ## License
 
 __Laundry App__ is open-sourced software licensed under the [MIT license](https://github.com/404NotFoundIndonesia/laravel-laundy-app-v2?tab=MIT-1-ov-file).
