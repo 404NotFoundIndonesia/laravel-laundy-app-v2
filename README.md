@@ -10,7 +10,7 @@
 
 </div>
 
-# Laundry App (Aplikasi Pinatu)
+# Laundry App (Aplikasi Penatu)
 
 This platform will provide laundry businesses with a robust set of tools to streamline their operations, enhance customer management, and optimise overall efficiency. The solution will be accessible via web, ensuring flexibility and convenience for users.
 
