@@ -5,3 +5,24 @@
 [x-cloak] {
     display: none;
 }
+
+.custom-v-select > div.vs__dropdown-toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border-color: #6B7280;
+    border-width: 1px;
+    border-radius: 0px;
+    padding-top: 0.4rem !important;
+    padding-right: 0.75rem !important;
+    padding-bottom: 0.4rem !important;
+    padding-left: 0.1rem !important;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    @apply border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm;
+}
+
+.custom-v-select span.vs__selected {
+    margin-top: 0 !important;
+}
