@@ -96,6 +96,13 @@ Open `http://localhost:8000` in your browser to access the app. When you want to
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/53e1dcd4-b464-40c5-8fd6-e9f24892225e">
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/88c098a2-6157-46e1-a725-0b6bf4183e78">
 
+### Supplier Management
+
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/9a76e009-8054-46c2-825a-4c23f56e3ff0">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/03a20cb1-a75d-4241-b648-0908b279a744">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/98ead07d-2217-4124-97fe-c292fdcb59ee">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/6cd46b9f-ca75-4f03-93c9-fa459847a3bd">
+
 ## License
 
 __Laundry App__ is open-sourced software licensed under the [MIT license](https://github.com/404NotFoundIndonesia/laravel-laundy-app-v2?tab=MIT-1-ov-file).
