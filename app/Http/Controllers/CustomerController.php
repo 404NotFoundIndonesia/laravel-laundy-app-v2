@@ -102,4 +102,25 @@ class CustomerController extends Controller
             return back()->dangerBanner('Failed to delete the customer');
         }
     }
+
+    /**
+     * Remove bulk resource from storage.
+     */
+    public function destroyBulk(Request $request): RedirectResponse
+    {
+        try {
+            $ids = explode(',', $request->input('ids'));
+            if (count($ids) === 0) {
+                return back()->dangerBanner('No customer selected!');
+            }
+
+            Customer::query()->whereIn('id', $ids)->delete();
+
+            return back()->banner('Successfully deleted the selected customers');
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+
+            return back()->dangerBanner('Failed to delete the selected customers');
+        }
+    }
 }

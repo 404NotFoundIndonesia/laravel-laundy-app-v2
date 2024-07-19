@@ -15,5 +15,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
+    Route::delete('customer', [\App\Http\Controllers\CustomerController::class, 'destroyBulk'])->name('customer.destroy-bulk');
+
     Route::resource('supplier', \App\Http\Controllers\SupplierController::class);
+    Route::delete('supplier', [\App\Http\Controllers\SupplierController::class, 'destroyBulk'])->name('supplier.destroy-bulk');
 });

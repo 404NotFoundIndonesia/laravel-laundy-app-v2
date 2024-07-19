@@ -2,10 +2,13 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Pagination from '@/Components/Pagination.vue';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import DangerButton from "@/Components/DangerButton.vue";
 import {Link, router, useForm, usePage} from '@inertiajs/vue3';
 import {dateHumanFormat, deleteConfirmation} from '@/util';
+import {ref} from "vue";
 
 const page = usePage();
+const selected = ref([]);
 
 const filterForm = useForm({
     q: page.props.request?.q,
@@ -19,11 +22,28 @@ const filter = () => {
     });
 };
 
+const selectAll = () => {
+    if (selected.value.length === page.props.items.data?.length) {
+        selected.value = [];
+    } else {
+        selected.value = [];
+        selected.value = page.props.items.data.map(item => item.id);
+    }
+};
+
 const destroy = (id) => {
     deleteConfirmation(() => {
-        router.delete(route('supplier.destroy', id), {
+        const destroyRoute = typeof id === 'object' ?
+            route('supplier.destroy-bulk') + '?' + (new URLSearchParams({ids: selected.value}).toString()) :
+            route('supplier.destroy', id);
+        router.delete(destroyRoute, {
             preserveState: true,
             preserveScroll: true,
+            onSuccess: () => {
+                if (typeof id === 'object') {
+                    selected.value = [];
+                }
+            },
         });
     });
 };
@@ -57,7 +77,7 @@ const destroy = (id) => {
                                                       clip-rule="evenodd"/>
                                             </svg>
                                         </div>
-                                        <input type="text" @keyup="filter" v-model="filterForm.q"
+                                        <input type="search" @keyup="filter" v-model="filterForm.q" autofocus
                                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-500 dark:focus:border-emerald-500"
                                                placeholder="Search" required="">
                                     </div>
@@ -93,6 +113,15 @@ const destroy = (id) => {
                                 <thead
                                     class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
+                                    <th scope="col" class="p-4">
+                                        <div class="flex items-center">
+                                            <input id="checkbox-all"
+                                                   :checked="selected.length === $page.props.items.data?.length"
+                                                   @change="selectAll" type="checkbox"
+                                                   class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-emerald-600 focus:ring-emerald-500 dark:focus:ring-emerald-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <label for="checkbox-all" class="sr-only">checkbox</label>
+                                        </div>
+                                    </th>
                                     <th scope="col" class="px-4 py-3">Created At</th>
                                     <th scope="col" class="px-4 py-3">Company</th>
                                     <th scope="col" class="px-4 py-3">Contact Person</th>
@@ -106,6 +135,15 @@ const destroy = (id) => {
                                 <template v-if="$page.props.items?.data?.length">
                                     <tr class="border-b dark:border-gray-600" v-for="supplier in $page.props.items.data"
                                         :key="supplier.id">
+                                        <td class="w-4 px-4 py-3">
+                                            <div class="flex items-center">
+                                                <input :id="`checkbox-table-search-${supplier.id}`" v-model="selected"
+                                                       :value="supplier.id" type="checkbox"
+                                                       onclick="event.stopPropagation()"
+                                                       class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-emerald-600 focus:ring-emerald-500 dark:focus:ring-emerald-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label :for="`checkbox-table-search-${supplier.id}`" class="sr-only">checkbox</label>
+                                            </div>
+                                        </td>
                                         <td class="px-4 py-2 font-regular text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ dateHumanFormat(supplier.created_at) }}
                                         </td>
@@ -167,7 +205,7 @@ const destroy = (id) => {
                                     </tr>
                                 </template>
                                 <tr v-else class="border-b dark:border-gray-700">
-                                    <th scope="row" colspan="4"
+                                    <th scope="row" colspan="6"
                                         class="px-4 py-3 font-light text-gray-500 whitespace-nowrap dark:text-white text-center">
                                         No supplier available. You can
                                         <Link :href="route('supplier.create')"
@@ -187,5 +225,16 @@ const destroy = (id) => {
                 </div>
             </div>
         </div>
+
+        <nav v-show="selected.length > 0" class="fixed bottom-0 w-full bg-white shadow-xl z-50 dark:bg-gray-800">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+                <div class="flex">
+                    <DangerButton @click="destroy">
+                        Delete Selected
+                    </DangerButton>
+                </div>
+                <h5>{{ selected.length }} {{ selected.length > 1 ? 'suppliers' : 'supplier' }} selected.</h5>
+            </div>
+        </nav>
     </AppLayout>
 </template>

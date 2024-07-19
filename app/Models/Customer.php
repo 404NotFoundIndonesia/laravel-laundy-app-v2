@@ -18,7 +18,7 @@ class Customer extends Model
     public function scopeSearch(Builder $query, ?string $search)
     {
         return $query->when($search, function (Builder $query) use ($search) {
-            return $query->where('name', 'LIKE', $search . '%')
+            return $query->where('name', 'LIKE', '%' . $search . '%')
                 ->orWhere('phone', $search);
         });
     }

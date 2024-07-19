@@ -18,8 +18,8 @@ class Supplier extends Model
     public function scopeSearch(Builder $query, ?string $search)
     {
         return $query->when($search, function (Builder $query) use ($search) {
-            return $query->where('name', 'LIKE', $search . '%')
-                ->orWhere('contact_person', 'LIKE', $search . '%')
+            return $query->where('name', 'LIKE',  '%' . $search . '%')
+                ->orWhere('contact_person', 'LIKE', '%' . $search . '%')
                 ->orWhere('email', $search)
                 ->orWhere('phone', $search);
         });
