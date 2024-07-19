@@ -15,4 +15,5 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
+    Route::resource('supplier', \App\Http\Controllers\SupplierController::class);
 });
