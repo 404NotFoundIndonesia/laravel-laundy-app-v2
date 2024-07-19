@@ -43,7 +43,7 @@ import {dateHumanFormat} from "@/util.js";
                             <div>
                                 <h3 class="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl dark:text-white">
                                     {{ $page.props.customer.name }}</h3>
-                                <small class="text-gray-500">Member since:
+                                <small class="text-gray-500">Customer since:
                                     {{ dateHumanFormat($page.props.customer.created_at) }}</small>
                             </div>
                             <div class="px-4 py-3 flex items-center justify-end">
