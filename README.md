@@ -89,6 +89,13 @@ Open `http://localhost:8000` in your browser to access the app. When you want to
 
 ## Screenshot
 
+### Service Management
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/01a9354e-7242-43e0-93f1-2ec073fa670d">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/e78171cb-4902-4e42-abdb-02d00da8ff75">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/6b15e929-bbb7-456b-a178-67e0d629d900">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/3121a14e-3eff-4bf9-a697-dda68d6dfed8">
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/8d4edd43-8ab0-4a55-9b9e-e11706c5fcf9">
+
 ### Customer Management
 
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/64a628cc-6615-408e-b7de-7886b2503ebf">

@@ -14,6 +14,9 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
+    Route::resource('service', \App\Http\Controllers\ServiceController::class);
+    Route::delete('service', [\App\Http\Controllers\ServiceController::class, 'destroyBulk'])->name('service.destroy-bulk');
+
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     Route::delete('customer', [\App\Http\Controllers\CustomerController::class, 'destroyBulk'])->name('customer.destroy-bulk');
 

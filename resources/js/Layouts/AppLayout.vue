@@ -71,6 +71,10 @@ onMounted(initFlowbite);
                                             Master Data
                                         </div>
 
+                                        <DropdownLink :href="route('service.index')">
+                                            Service
+                                        </DropdownLink>
+
                                         <DropdownLink :href="route('customer.index')">
                                             Customer
                                         </DropdownLink>
@@ -152,6 +156,9 @@ onMounted(initFlowbite);
                         </div>
 
                         <div class="mt-3 space-y-1">
+                            <ResponsiveNavLink :href="route('service.index')" :active="route().current('service.*')">
+                                Service
+                            </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('customer.index')" :active="route().current('customer.*')">
                                 Customer
                             </ResponsiveNavLink>
