@@ -12,15 +12,15 @@ class Service extends Model
     use HasFactory;
 
     const UNIT_PCS = 'pcs';
-    const UNIT_KG = 'kilogram';
-    const UNIT_METER = 'meter';
+    const UNIT_KG = 'kg';
+    const UNIT_METER = 'm';
 
     public static function availableUnits(): array
     {
         return [
-            self::UNIT_PCS,
             self::UNIT_KG,
             self::UNIT_METER,
+            self::UNIT_PCS,
         ];
     }
 

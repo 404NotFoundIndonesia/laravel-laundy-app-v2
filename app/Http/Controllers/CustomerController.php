@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Customer;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -122,5 +123,14 @@ class CustomerController extends Controller
 
             return back()->dangerBanner('Failed to delete the selected customers');
         }
+    }
+
+    public function search(Request $request): JsonResponse
+    {
+        $customers = Customer::query()
+            ->search($request->query('q'))
+            ->limit($request->query('size') ?? 50)
+            ->get();
+        return \response()->json($customers);
     }
 }

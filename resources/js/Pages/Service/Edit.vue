@@ -113,7 +113,7 @@ const submit = () => {
                                             id="original_price"
                                             @input="validateNumber( form,'original_price')"
                                             v-model="form.original_price"
-                                            class="block w-full ps-14 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-emerald-500 dark:focus:border-emerald-600 focus:ring-emerald-500 dark:focus:ring-emerald-600 rounded-md shadow-sm">
+                                            class="block w-full ps-10 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-emerald-500 dark:focus:border-emerald-600 focus:ring-emerald-500 dark:focus:ring-emerald-600 rounded-md shadow-sm">
                                         <div class="absolute text-gray-400 inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none">
                                             / {{ form.unit }}
                                         </div>
@@ -131,7 +131,7 @@ const submit = () => {
                                             id="sale_price"
                                             @input="validateNumber( form,'sale_price')"
                                             v-model="form.sale_price"
-                                            class="block w-full ps-14 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-emerald-500 dark:focus:border-emerald-600 focus:ring-emerald-500 dark:focus:ring-emerald-600 rounded-md shadow-sm">
+                                            class="block w-full ps-10 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-emerald-500 dark:focus:border-emerald-600 focus:ring-emerald-500 dark:focus:ring-emerald-600 rounded-md shadow-sm">
                                         <div class="absolute text-gray-400 inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none">
                                             / {{ form.unit }}
                                         </div>

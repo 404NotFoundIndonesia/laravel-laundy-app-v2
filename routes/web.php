@@ -14,9 +14,17 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
+    Route::get('transaction', [\App\Http\Controllers\TransactionController::class, 'index'])->name('transaction.index');
+    Route::get('transaction/create', [\App\Http\Controllers\TransactionController::class, 'create'])->name('transaction.create');
+    Route::post('transaction', [\App\Http\Controllers\TransactionController::class, 'store'])->name('transaction.store');
+    Route::get('transaction/{transaction}', [\App\Http\Controllers\TransactionController::class, 'show'])->name('transaction.show');
+    Route::delete('transaction/{transaction}', [\App\Http\Controllers\TransactionController::class, 'destroy'])->name('transaction.destroy');
+    Route::delete('transaction', [\App\Http\Controllers\TransactionController::class, 'destroyBulk'])->name('transaction.destroy-bulk');
+
     Route::resource('service', \App\Http\Controllers\ServiceController::class);
     Route::delete('service', [\App\Http\Controllers\ServiceController::class, 'destroyBulk'])->name('service.destroy-bulk');
 
+    Route::get('customer/search', [\App\Http\Controllers\CustomerController::class, 'search'])->name('customer.search');
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     Route::delete('customer', [\App\Http\Controllers\CustomerController::class, 'destroyBulk'])->name('customer.destroy-bulk');
 

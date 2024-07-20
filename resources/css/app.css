@@ -26,3 +26,13 @@
 .custom-v-select span.vs__selected {
     margin-top: 0 !important;
 }
+
+.custom-v-select > div.vs__dropdown-toggle > div.vs__selected-options > input.vs__search::placeholder {
+    color: #9ca3af !important;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5rem; /* 16px */
+}
+
+.custom-v-select ul.vs__dropdown-menu > .vs__dropdown-option.vs__dropdown-option--highlight {
+    background-color: #e2e8f0 !important;
+}

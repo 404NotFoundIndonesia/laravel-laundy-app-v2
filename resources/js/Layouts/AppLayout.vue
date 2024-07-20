@@ -46,6 +46,9 @@ onMounted(initFlowbite);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('transaction.index')" :active="route().current('transaction.*')">
+                                    Transaction
+                                </NavLink>
                             </div>
                         </div>
 
@@ -139,6 +142,9 @@ onMounted(initFlowbite);
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('transaction.index')" :active="route().current('transaction.*')">
+                            Transaction
                         </ResponsiveNavLink>
                     </div>
 

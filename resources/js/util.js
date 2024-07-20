@@ -4,7 +4,7 @@ export const dateHumanFormat = (dateString) => {
     if (!dateString) return '-';
 
     const date = new Date(dateString);
-    const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+    const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
     return date.toLocaleDateString('en-GB', options);
 };
 
